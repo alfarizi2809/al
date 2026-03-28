@@ -7,6 +7,9 @@ import ProjectsSection from '@/components/ProjectsSection';
 import CertificatesSection from '@/components/CertificatesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AccordionSection from "@/components/AccordionSection";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
+import TranslateButton from "@/components/TranslateButton";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -37,7 +40,10 @@ const Index = () => {
       <SkillsSection />
       <ProjectsSection />
       <CertificatesSection />
+      <ProjectsCarousel />
+      <AccordionSection />
       <ContactSection />
+      <TranslateButton />
       <Footer />
     </div>
   );

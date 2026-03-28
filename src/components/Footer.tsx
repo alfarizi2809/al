@@ -5,10 +5,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Github, href: 'https://github.com/aqsarayyan', label: 'GitHub' },
+    { icon: Linkedin, href: '#https://www.linkedin.com/in/muhammadaqsarayyan/', label: 'LinkedIn' },
+   // { icon: Youtube, href: '#', label: 'YouTube' },
+    { icon: Instagram, href: 'https://www.instagram.com/aqsa_rayyan/', label: 'Instagram' },
   ];
 
   return (
@@ -21,9 +21,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2 text-muted-foreground"
           >
-            <span>© {currentYear} Made with</span>
-            <Heart className="h-4 w-4 text-destructive fill-destructive" />
-            <span>by Developer</span>
+            <span>© {currentYear} Made by</span>
+            
+            <span>Aqsa Rayyan</span>
           </motion.div>
 
           <motion.div
