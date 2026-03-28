@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'emailkamu@gmail.com',
+    value: 'farizi6772@gmail.com',
     href: 'mailto:emailkamu@gmail.com',
   },
   {
