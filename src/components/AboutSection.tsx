@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { Code2, Video, Coffee, Rocket } from 'lucide-react';
+import { Code2, Coffee, Rocket, BookOpen } from 'lucide-react';
 
 export default function AboutSection() {
 
   const stats = [
-    { icon: Code2, value: '15+', label: 'Projects Built' },
-    { icon: Video, value: '20+', label: 'Videos Edited' },
+    { icon: Code2, value: '10+', label: 'Projects Built' },
+    { icon: Rocket, value: '2+', label: 'Years Learning' },
     { icon: Coffee, value: '∞', label: 'Late Night Coding' },
-    { icon: Rocket, value: '3+', label: 'Years Learning' },
+    { icon: BookOpen, value: 'Student', label: 'Status' },
   ];
 
   const skills = [
@@ -15,20 +15,20 @@ export default function AboutSection() {
     'JavaScript',
     'C++',
     'HTML',
-    'etc...',
+    'CSS',
   ];
 
   return (
     <section
       id="about"
-      className="relative py-24 overflow-hidden"
+      className="relative py-24 overflow-hidden bg-black"
     >
 
-      {/* Smooth Animated Navy Gradient */}
+      {/* Soft Glow Background */}
       <motion.div
-        animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900 via-blue-800 to-blue-950 bg-[length:300%_300%] blur-3xl opacity-60"
+        animate={{ opacity: [0.1, 0.25, 0.1] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute inset-0 bg-white/5 blur-3xl"
       />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -41,15 +41,15 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="text-blue-300 font-semibold tracking-wide block mb-2">
+          <span className="text-gray-400 font-semibold tracking-wide block mb-2">
             About Me
           </span>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
             Get to Know Me
           </h2>
 
-          <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-blue-300" />
+          <div className="w-24 h-1 mx-auto rounded-full bg-white/30" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -63,10 +63,9 @@ export default function AboutSection() {
             className="relative flex justify-center"
           >
 
-            {/* Floating container */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 4, repeat: Infinity }}
               className="relative"
             >
 
@@ -74,7 +73,7 @@ export default function AboutSection() {
 
               <img
                 src="/profile.jpg"
-                alt="profile"
+                alt="Muhammad Alfarizi"
                 className="relative w-72 h-72 rounded-full object-cover border border-white/20 shadow-lg"
               />
 
@@ -86,7 +85,7 @@ export default function AboutSection() {
                 <motion.span
                   key={skill}
                   whileHover={{ scale: 1.1 }}
-                  className="px-3 py-1 text-sm rounded-full bg-white/10 backdrop-blur-lg border border-white/20 shadow text-white"
+                  className="px-3 py-1 text-sm rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white"
                 >
                   {skill}
                 </motion.span>
@@ -98,7 +97,7 @@ export default function AboutSection() {
                 <motion.span
                   key={skill}
                   whileHover={{ scale: 1.1 }}
-                  className="px-3 py-1 text-sm rounded-full bg-white/10 backdrop-blur-lg border border-white/20 shadow text-white"
+                  className="px-3 py-1 text-sm rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white"
                 >
                   {skill}
                 </motion.span>
@@ -115,21 +114,22 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-white">
-              Student Developer from Banda Aceh
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Pelajar & Coder dari Banda Aceh
             </h3>
 
-            <p className="text-blue-200/80 leading-relaxed">
-              I am a student at MAN 1 Banda Aceh who has a strong interest
-              in technology and programming. I started learning coding in
-              2022 and continue to develop various projects to improve
-              my skills.
+            <p className="text-gray-300 leading-relaxed">
+              Saya adalah seorang pelajar di MAN 1 Banda Aceh yang memiliki
+              ketertarikan besar di bidang teknologi dan programming.
+              Saya mulai belajar coding sejak kelas 1 SMA dan terus
+              mengembangkan kemampuan saya hingga saat ini.
             </p>
 
-            <p className="text-blue-200/80 leading-relaxed">
-              Besides coding, I am also interested in photography,
-              video editing, and English debate. I believe creativity
-              and technology can work together to create innovative solutions.
+            <p className="text-gray-400 leading-relaxed">
+              Bagi saya, coding bukan hanya sekadar skill, tetapi juga
+              cara untuk menciptakan sesuatu yang bermanfaat. Saya
+              senang mempelajari hal baru dan terus berkembang untuk
+              menjadi developer yang lebih baik di masa depan.
             </p>
 
             {/* Stats */}
@@ -143,13 +143,13 @@ export default function AboutSection() {
                   transition={{ delay: index * 0.15, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8, scale: 1.03 }}
-                  className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center text-white"
+                  className="p-6 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg text-center text-white"
                 >
-                  <stat.icon className="h-7 w-7 text-blue-300 mx-auto mb-3" />
-                  <p className="font-display text-3xl font-bold">
+                  <stat.icon className="h-7 w-7 text-white mx-auto mb-3" />
+                  <p className="text-3xl font-bold">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-blue-200/80">
+                  <p className="text-sm text-gray-400">
                     {stat.label}
                   </p>
                 </motion.div>
