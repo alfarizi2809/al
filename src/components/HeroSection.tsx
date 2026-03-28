@@ -12,8 +12,11 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-900 via-blue-800 to-black">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <ThreeScene />
+
+      {/* Glow background */}
+      <div className="absolute inset-0 bg-white/5 blur-3xl opacity-20" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -28,7 +31,7 @@ export default function HeroSection() {
             <img
               src="/profile.jpg"
               alt="Muhammad Alfarizi Herdiawan"
-              className="w-52 h-52 md:w-72 md:h-72 object-cover rounded-full border-4 border-blue-400 shadow-lg"
+              className="w-52 h-52 md:w-72 md:h-72 object-cover rounded-full border border-white/20 shadow-xl"
             />
           </motion.div>
 
@@ -36,24 +39,24 @@ export default function HeroSection() {
           <div className="text-center md:text-left flex-1">
 
             <motion.span 
-              className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-blue-400 mb-6"
+              className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-gray-300 mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Welcome to My Portfolio
+              Portfolio
             </motion.span>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight"
             >
               Muhammad Alfarizi Herdiawan
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Seorang Pelajar &amp; Coder
+              <span className="text-gray-400">
+                Pelajar &amp; Coder
               </span>
             </motion.h1>
 
@@ -61,12 +64,12 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl"
+              className="text-lg md:text-xl text-gray-400 mb-8 max-w-xl"
             >
-              Saya mulai belajar coding sejak kelas 1 SMA. Saya tertarik dengan dunia
-              programming karena sangat menyenangkan dan memiliki peran penting
-              untuk masa depan. Saat ini saya adalah pelajar di MAN 1 Banda Aceh
-              yang terus belajar dan berkembang di bidang teknologi.
+              Saya mulai belajar coding sejak kelas 1 SMA dan terus
+              mengembangkan skill di bidang teknologi. Saya percaya
+              bahwa coding adalah kunci untuk menciptakan masa depan
+              yang lebih baik.
             </motion.p>
 
             <motion.div
@@ -77,7 +80,7 @@ export default function HeroSection() {
             >
               <Button 
                 size="lg" 
-                className="rounded-full px-8 bg-blue-500 hover:bg-blue-600 text-white"
+                className="rounded-full px-8 bg-white text-black hover:bg-gray-200"
                 onClick={() => {
                   const element = document.querySelector('#projects');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -89,7 +92,7 @@ export default function HeroSection() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="rounded-full px-8 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
+                className="rounded-full px-8 border-white text-white hover:bg-white hover:text-black"
                 onClick={() => {
                   const element = document.querySelector('#contact');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -106,14 +109,14 @@ export default function HeroSection() {
               className="flex items-center gap-6 justify-center md:justify-start"
             >
               {[
-                { icon: Github, href: '#', label: 'GitHub' },
+                { icon: Github, href: 'https://github.com/alfarizi2809', label: 'GitHub' },
                 { icon: Linkedin, href: '#', label: 'LinkedIn' },
                 { icon: Instagram, href: '#', label: 'Instagram' },
               ].map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="p-3 rounded-full bg-blue-500/20 hover:bg-blue-500/40 transition-all duration-300"
+                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
@@ -129,11 +132,11 @@ export default function HeroSection() {
 
       <motion.button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full bg-blue-500/20 hover:bg-blue-500/40 cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer"
         whileHover={{ scale: 1.1 }}
         aria-label="Scroll to About"
       >
-        <ArrowDown className="h-5 w-5 text-blue-400" />
+        <ArrowDown className="h-5 w-5 text-white" />
       </motion.button>
     </section>
   );
