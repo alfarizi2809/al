@@ -1,91 +1,76 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: 'Personal Portfolio Website',
-    description: 'My personal portfolio website built to showcase my coding projects, technical skills, and creative work.',
-    tags: ['HTML', 'CSS', 'React'],
-    image: '🌐',
-    color: 'from-blue-500/20 to-cyan-500/20',
+    title: 'Website Portfolio',
+    description: 'Website portfolio pribadi yang saya buat untuk menampilkan project dan skill saya.',
+    tags: ['React', 'Tailwind'],
+    image: '💻',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Python Automation Scripts',
-    description: 'A collection of small Python scripts I built while learning programming, including simple automation and utility tools.',
+    title: 'To-Do List App',
+    description: 'Aplikasi sederhana untuk mencatat tugas harian dengan fitur tambah dan checklist.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    image: '📝',
+    github: '#',
+  },
+  {
+    title: 'Kalkulator Sederhana',
+    description: 'Project latihan JavaScript untuk membuat kalkulator dengan operasi dasar.',
+    tags: ['JavaScript'],
+    image: '🧮',
+    github: '#',
+  },
+  {
+    title: 'Landing Page',
+    description: 'Halaman website modern untuk latihan desain UI dan responsive layout.',
+    tags: ['HTML', 'CSS'],
+    image: '🌐',
+    github: '#',
+  },
+  {
+    title: 'Python Mini Tools',
+    description: 'Kumpulan script Python sederhana untuk membantu tugas sehari-hari.',
     tags: ['Python'],
     image: '🐍',
-    color: 'from-green-500/20 to-teal-500/20',
     github: '#',
   },
   {
-    title: 'C++ Practice Programs',
-    description: 'Programs created while learning C++ fundamentals like loops, conditions, functions, and basic algorithms.',
-    tags: ['C++'],
-    image: '💻',
-    color: 'from-purple-500/20 to-pink-500/20',
-    github: '#',
-  },
-  {
-    title: 'Simple Websites',
-    description: 'Basic websites created while learning web development using HTML and CSS.',
-    tags: ['HTML', 'CSS'],
-    image: '🖥️',
-    color: 'from-orange-500/20 to-red-500/20',
-    github: '#',
-  },
-  {
-    title: 'Video Editing Projects',
-    description: 'Video editing work created using DaVinci Resolve including personal edits and creative projects.',
-    tags: ['DaVinci Resolve', 'Video Editing'],
-    image: '🎬',
-    color: 'from-red-500/20 to-orange-500/20',
-    isContent: true,
-    youtube: '#',
-  },
-  {
-    title: 'Photography',
-    description: 'Photography projects exploring composition, lighting, and storytelling through images.',
-    tags: ['Photography'],
-    image: '📷',
-    color: 'from-cyan-500/20 to-blue-500/20',
-    isContent: true,
+    title: 'Eksperimen Coding',
+    description: 'Project kecil yang dibuat saat mencoba teknologi baru.',
+    tags: ['Learning'],
+    image: '⚡',
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 bg-black text-white">
 
-      {/* Animated Navy Gradient */}
-      <motion.div
-        animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900 via-blue-800 to-blue-950 bg-[length:300%_300%] blur-3xl opacity-60"
-      />
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4">
 
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-300 font-medium mb-2 block">Portfolio</span>
+          <span className="text-gray-400 block mb-2">
+            Portfolio
+          </span>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-white">
-            Projects &amp; Works
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Project Saya
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-300 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-white/30 mx-auto rounded-full" />
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
           {projects.map((project, index) => (
@@ -94,48 +79,32 @@ export default function ProjectsSection() {
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.6 }}
+              transition={{ delay: index * 0.1 }}
             >
 
-              {/* Floating Card */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                whileHover={{ y: -10, scale: 1.03 }}
-                className="h-full p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+              <div className="h-full p-6 bg-white/5 border border-white/10 rounded-2xl hover:border-white/30 hover:-translate-y-2 transition-all duration-300">
 
                 {/* Icon */}
-                <div className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
-                  <span className="text-6xl">{project.image}</span>
+                <div className="aspect-video rounded-xl mb-4 flex items-center justify-center bg-white/5 border border-white/10">
+                  <span className="text-5xl">{project.image}</span>
                 </div>
 
-                <div className="space-y-3 text-white">
+                <div className="space-y-3">
 
-                  <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold">
+                    {project.title}
+                  </h3>
 
-                    {project.isContent && (
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-300/20 text-blue-300 font-medium">
-                        Content
-                      </span>
-                    )}
-
-                    <h3 className="font-display text-lg font-bold">
-                      {project.title}
-                    </h3>
-
-                  </div>
-
-                  <p className="text-sm text-blue-200/80 line-clamp-2">
+                  <p className="text-sm text-gray-400">
                     {project.description}
                   </p>
 
+                  {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs rounded-md bg-blue-300/20 text-blue-300"
+                        className="px-2 py-1 text-xs rounded-md bg-white/10 border border-white/20"
                       >
                         {tag}
                       </span>
@@ -146,7 +115,7 @@ export default function ProjectsSection() {
                   <div className="flex gap-2 pt-2">
 
                     {project.github && (
-                      <Button variant="outline" size="sm" className="rounded-full" asChild>
+                      <Button variant="outline" size="sm" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black" asChild>
                         <a href={project.github}>
                           <Github className="h-4 w-4 mr-1" />
                           Code
@@ -155,19 +124,10 @@ export default function ProjectsSection() {
                     )}
 
                     {project.demo && (
-                      <Button size="sm" className="rounded-full" asChild>
+                      <Button size="sm" className="rounded-full bg-white text-black hover:bg-gray-200" asChild>
                         <a href={project.demo}>
                           <ExternalLink className="h-4 w-4 mr-1" />
                           Demo
-                        </a>
-                      </Button>
-                    )}
-
-                    {project.youtube && (
-                      <Button size="sm" className="rounded-full" asChild>
-                        <a href={project.youtube}>
-                          <Play className="h-4 w-4 mr-1" />
-                          Watch
                         </a>
                       </Button>
                     )}
@@ -176,7 +136,7 @@ export default function ProjectsSection() {
 
                 </div>
 
-              </motion.div>
+              </div>
 
             </motion.div>
 

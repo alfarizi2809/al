@@ -1,164 +1,176 @@
 import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const skills = {
-  web: [
-    { name: 'HTML', level: 85 },
-    { name: 'Basic CSS', level: 75 },
-    { name: 'Simple Websites', level: 80 },
-    { name: 'React (Learning)', level: 40 },
-  ],
-  programming: [
-    { name: 'Python', level: 85 },
-    { name: 'C++', level: 70 },
-    { name: 'SQL', level: 65 },
-    { name: 'Python Scripts', level: 85 },
-  ],
-  tools: [
-    { name: 'VS Code', level: 90 },
-    { name: 'DaVinci Resolve', level: 85 },
-    { name: 'Canva', level: 80 },
-    { name: 'Troubleshooting', level: 85 },
-    { name: 'Installing OS', level: 80 },
-  ],
-};
+const projects = [
+  {
+    title: 'Portfolio Website',
+    description: 'Website personal untuk showcase skill, project, dan perjalanan belajar coding.',
+    tags: ['React', 'Tailwind'],
+    image: '💻',
+    status: 'Done',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Task Manager',
+    description: 'Aplikasi sederhana untuk mengatur aktivitas harian dengan fitur checklist.',
+    tags: ['JavaScript'],
+    image: '📋',
+    status: 'Done',
+    github: '#',
+  },
+  {
+    title: 'Calculator App',
+    description: 'Kalkulator basic untuk latihan logic JavaScript.',
+    tags: ['JS'],
+    image: '🧮',
+    status: 'Done',
+    github: '#',
+  },
+  {
+    title: 'Landing UI',
+    description: 'Latihan membuat tampilan website modern dan responsive.',
+    tags: ['HTML', 'CSS'],
+    image: '🌐',
+    status: 'Learning',
+    github: '#',
+  },
+  {
+    title: 'Python Mini Tools',
+    description: 'Script kecil untuk automation dan latihan logic programming.',
+    tags: ['Python'],
+    image: '🐍',
+    status: 'Ongoing',
+    github: '#',
+  },
+  {
+    title: 'Code Experiments',
+    description: 'Eksperimen berbagai teknologi baru yang sedang dipelajari.',
+    tags: ['Explore'],
+    image: '⚡',
+    status: 'Explore',
+  },
+];
 
-function SkillBar({ name, level, delay }) {
+export default function ProjectsSection() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="space-y-2"
-    >
-      <div className="flex justify-between items-center text-white">
-        <span className="font-medium">{name}</span>
-        <span className="text-sm text-blue-200">{level}%</span>
-      </div>
+    <section id="projects" className="py-24 bg-black text-white">
 
-      <div className="h-2 bg-blue-800/30 rounded-full overflow-hidden">
+      <div className="container mx-auto px-4">
+
+        {/* TITLE */}
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: delay + 0.2, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-300"
-        />
-      </div>
-    </motion.div>
-  );
-}
-
-export default function SkillsSection() {
-  return (
-    <section id="skills" className="relative py-20 md:py-32 overflow-hidden">
-
-      {/* Animated Navy Gradient Background */}
-      <motion.div
-        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 bg-[length:200%_200%] blur-3xl opacity-50"
-      />
-
-      <div className="container mx-auto px-4 relative z-10">
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-blue-300 font-medium mb-2 block">Skills</span>
+          <p className="text-gray-500 mb-2 tracking-widest text-sm">
+            MY WORK
+          </p>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-white">
-            Skills & Technologies
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Selected Projects
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-300 mx-auto rounded-full" />
+          <div className="w-16 h-[2px] bg-white/30 mx-auto mt-4" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {/* Web Development */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-white/20">
-                <span className="text-2xl">🌐</span>
+          {projects.map((project, index) => (
+
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+
+              <div className="group relative h-full p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition duration-300">
+
+                {/* glow effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition blur-xl bg-white/5" />
+
+                {/* CONTENT */}
+                <div className="relative z-10">
+
+                  {/* ICON */}
+                  <div className="flex items-center justify-center h-24 mb-4 text-5xl border border-white/10 rounded-xl bg-black">
+                    {project.image}
+                  </div>
+
+                  {/* TITLE */}
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="font-semibold text-lg">
+                      {project.title}
+                    </h3>
+
+                    <span className="text-xs text-gray-400 border border-white/10 px-2 py-1 rounded-full">
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* DESC */}
+                  <p className="text-sm text-gray-400 mb-4">
+                    {project.description}
+                  </p>
+
+                  {/* TAGS */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 py-1 border border-white/10 rounded-md text-gray-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* BUTTON */}
+                  <div className="flex gap-2">
+
+                    {project.github && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="rounded-full border-white/20 text-white hover:bg-white hover:text-black"
+                        asChild
+                      >
+                        <a href={project.github}>
+                          <Github className="w-4 h-4 mr-1" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+
+                    {project.demo && (
+                      <Button
+                        size="sm"
+                        className="rounded-full bg-white text-black hover:bg-gray-200"
+                        asChild
+                      >
+                        <a href={project.demo}>
+                          <ExternalLink className="w-4 h-4 mr-1" />
+                          Demo
+                        </a>
+                      </Button>
+                    )}
+
+                  </div>
+
+                </div>
+
               </div>
-              <h3 className="font-display text-xl font-bold text-white">
-                Web Development
-              </h3>
-            </div>
 
-            <div className="space-y-4">
-              {skills.web.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Programming */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-white/20">
-                <span className="text-2xl">💻</span>
-              </div>
-              <h3 className="font-display text-xl font-bold text-white">
-                Programming
-              </h3>
-            </div>
-
-            <div className="space-y-4">
-              {skills.programming.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Software & Tech */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-white/20">
-                <span className="text-2xl">🛠️</span>
-              </div>
-              <h3 className="font-display text-xl font-bold text-white">
-                Software & Tech
-              </h3>
-            </div>
-
-            <div className="space-y-4">
-              {skills.tools.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
+          ))}
 
         </div>
+
       </div>
     </section>
   );

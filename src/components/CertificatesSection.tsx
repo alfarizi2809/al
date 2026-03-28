@@ -3,58 +3,49 @@ import { BookOpen, Calendar } from 'lucide-react';
 
 const learning = [
   {
-    title: 'React',
-    description: 'Learning modern frontend development and building interactive web applications.',
-    progress: 'In Progress',
-    image: '⚛️',
-    color: 'from-blue-500/20 to-cyan-500/20',
+    title: 'JavaScript',
+    description: 'Memahami dasar hingga konsep lanjutan untuk membuat website interaktif.',
+    progress: 'Sedang Dipelajari',
+    image: '🟨',
   },
   {
-    title: 'Advanced Python',
-    description: 'Improving Python skills including scripting, automation, and problem solving.',
-    progress: 'In Progress',
+    title: 'Python',
+    description: 'Mengembangkan logika programming dan membuat program sederhana.',
+    progress: 'Terus Dikembangkan',
     image: '🐍',
-    color: 'from-green-500/20 to-emerald-500/20',
   },
   {
-    title: 'Web Development',
-    description: 'Learning how to build better websites using modern tools and frameworks.',
-    progress: 'Learning',
+    title: 'C++',
+    description: 'Belajar dasar algoritma dan pemrograman berbasis performa.',
+    progress: 'Dipahami Dasar',
+    image: '💻',
+  },
+  {
+    title: 'HTML & CSS',
+    description: 'Membangun tampilan website yang responsive dan menarik.',
+    progress: 'Aktif Digunakan',
     image: '🌐',
-    color: 'from-indigo-500/20 to-purple-500/20',
   },
   {
     title: 'Git & GitHub',
-    description: 'Practicing version control and collaboration using Git and GitHub.',
-    progress: 'Learning',
+    description: 'Belajar version control untuk menyimpan dan mengelola project.',
+    progress: 'Sedang Dipelajari',
     image: '🐙',
-    color: 'from-gray-500/20 to-slate-500/20',
   },
   {
     title: 'Problem Solving',
-    description: 'Improving logical thinking and algorithmic problem solving.',
-    progress: 'Ongoing',
+    description: 'Melatih logika dan kemampuan menyelesaikan masalah dalam coding.',
+    progress: 'Terus Dilatih',
     image: '🧠',
-    color: 'from-orange-500/20 to-yellow-500/20',
-  },
-  {
-    title: 'Software Development',
-    description: 'Learning how real-world software projects are structured and built.',
-    progress: 'Exploring',
-    image: '💻',
-    color: 'from-purple-500/20 to-pink-500/20',
   },
 ];
 
 export default function LearningSection() {
   return (
-    <section id="learning" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="learning" className="relative py-20 md:py-32 overflow-hidden bg-black">
 
-      <motion.div
-        animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900 via-blue-800 to-blue-950 bg-[length:300%_300%] blur-3xl opacity-60"
-      />
+      {/* Glow Background */}
+      <div className="absolute inset-0 bg-white/5 blur-3xl opacity-20" />
 
       <div className="container mx-auto px-4 relative z-10">
 
@@ -65,13 +56,15 @@ export default function LearningSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-300 font-medium mb-2 block">Learning</span>
+          <span className="text-gray-400 font-medium mb-2 block">
+            Learning Journey
+          </span>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-white">
-            Currently Learning
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+            Apa yang Sedang Saya Pelajari
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-300 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-white/30 mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -87,30 +80,29 @@ export default function LearningSection() {
             >
 
               <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="h-full p-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-white"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="h-full p-6 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg transition-all duration-300 text-white"
               >
 
-                <div className={`w-16 h-16 rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${item.color}`}>
-                  <span className="text-3xl">{item.image}</span>
+                <div className="w-14 h-14 rounded-xl mb-4 flex items-center justify-center bg-white/10">
+                  <span className="text-2xl">{item.image}</span>
                 </div>
 
                 <div className="space-y-3">
 
                   <div className="flex items-start gap-2">
-                    <BookOpen className="h-5 w-5 text-blue-300 mt-0.5 shrink-0" />
+                    <BookOpen className="h-5 w-5 text-white/70 mt-0.5" />
 
-                    <h3 className="font-display text-lg font-bold">
+                    <h3 className="text-lg font-bold">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-sm text-blue-200/80">
+                  <p className="text-sm text-gray-400">
                     {item.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm text-blue-200/80">
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Calendar className="h-4 w-4" />
                     <span>{item.progress}</span>
                   </div>

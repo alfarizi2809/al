@@ -110,8 +110,7 @@ export default function HeroSection() {
             >
               {[
                 { icon: Github, href: 'https://github.com/alfarizi2809', label: 'GitHub' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Instagram, href: '#', label: 'Instagram' },
+                { icon: Instagram, href: 'https://www.instagram.com/malfarizyyx', label: 'Instagram' },
               ].map((social) => (
                 <motion.a
                   key={social.label}

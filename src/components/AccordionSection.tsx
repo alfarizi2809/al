@@ -10,41 +10,44 @@ export default function AccordionSection() {
     <section className="py-24 px-4 max-w-4xl mx-auto text-white">
 
       <h2 className="text-4xl font-bold text-center mb-12">
-        More About Me
+        Lebih Tentang Saya
       </h2>
 
       <Accordion type="single" collapsible className="w-full space-y-4">
 
-        <AccordionItem value="item-1" className="border-white/20">
-          <AccordionTrigger className="text-lg">
-            What technologies do I use?
+        <AccordionItem value="item-1" className="border border-white/10 rounded-xl px-4">
+          <AccordionTrigger className="text-lg text-left">
+            Teknologi apa yang saya gunakan?
           </AccordionTrigger>
 
-          <AccordionContent className="text-blue-200/80">
-            I mainly work with React, Python, Git, and modern web development tools.
-            I'm constantly learning new technologies to improve my development skills.
+          <AccordionContent className="text-gray-400">
+            Saya menggunakan beberapa bahasa pemrograman seperti Python, JavaScript,
+            dan C++. Selain itu, saya juga mempelajari HTML dan CSS untuk membuat
+            tampilan website yang menarik.
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-2" className="border-white/20">
-          <AccordionTrigger className="text-lg">
-            What am I currently learning?
+        <AccordionItem value="item-2" className="border border-white/10 rounded-xl px-4">
+          <AccordionTrigger className="text-lg text-left">
+            Apa yang sedang saya pelajari?
           </AccordionTrigger>
 
-          <AccordionContent className="text-blue-200/80">
-            I'm currently learning React, advanced Python, software development practices,
-            and improving my problem-solving abilities.
+          <AccordionContent className="text-gray-400">
+            Saat ini saya sedang memperdalam pemahaman saya dalam dunia web development,
+            terutama JavaScript dan pengembangan website modern. Saya juga terus
+            melatih logika pemrograman agar semakin berkembang.
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-3" className="border-white/20">
-          <AccordionTrigger className="text-lg">
-            What are my future goals?
+        <AccordionItem value="item-3" className="border border-white/10 rounded-xl px-4">
+          <AccordionTrigger className="text-lg text-left">
+            Apa tujuan saya ke depan?
           </AccordionTrigger>
 
-          <AccordionContent className="text-blue-200/80">
-            My goal is to become a skilled software developer and build meaningful
-            projects that solve real-world problems.
+          <AccordionContent className="text-gray-400">
+            Tujuan saya adalah menjadi seorang developer yang handal dan mampu
+            membuat project yang bermanfaat. Saya ingin terus belajar dan
+            berkembang di bidang teknologi untuk masa depan yang lebih baik.
           </AccordionContent>
         </AccordionItem>
 
