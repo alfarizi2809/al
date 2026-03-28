@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Youtube, Instagram } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThreeScene from './ThreeScene';
 
@@ -27,7 +27,7 @@ export default function HeroSection() {
           >
             <img
               src="/profile.jpg"
-              alt="Profile"
+              alt="Muhammad Alfarizi Herdiawan"
               className="w-52 h-52 md:w-72 md:h-72 object-cover rounded-full border-4 border-blue-400 shadow-lg"
             />
           </motion.div>
@@ -50,10 +50,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
             >
-              Fulltime Student
+              Muhammad Alfarizi Herdiawan
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                &amp; Part-Time Coder
+                Seorang Pelajar &amp; Coder
               </span>
             </motion.h1>
 
@@ -63,8 +63,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl"
             >
-              I've been coding since 2022, and I have a passion for creating innovation
-              and learning new things. I am currently a student at MAN 1 Banda Aceh.
+              Saya mulai belajar coding sejak kelas 1 SMA. Saya tertarik dengan dunia
+              programming karena sangat menyenangkan dan memiliki peran penting
+              untuk masa depan. Saat ini saya adalah pelajar di MAN 1 Banda Aceh
+              yang terus belajar dan berkembang di bidang teknologi.
             </motion.p>
 
             <motion.div
@@ -104,10 +106,9 @@ export default function HeroSection() {
               className="flex items-center gap-6 justify-center md:justify-start"
             >
               {[
-                { icon: Github, href: 'https://github.com/aqsarayyan', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/in/muhammadaqsarayyan/', label: 'LinkedIn' },
-                // { icon: Youtube, href: '#', label: 'YouTube' },
-                { icon: Instagram, href: 'https://www.instagram.com/aqsa_rayyan/', label: 'Instagram' },
+                { icon: Github, href: '#', label: 'GitHub' },
+                { icon: Linkedin, href: '#', label: 'LinkedIn' },
+                { icon: Instagram, href: '#', label: 'Instagram' },
               ].map((social) => (
                 <motion.a
                   key={social.label}
